@@ -2,6 +2,7 @@
 
 ## 介绍
 项目继承自 OpenQuant中文服务群（50511635）群共享中发布的QuantBox.Demo
+<br>
 该项目基于 [QuantBox](https://github.com/QuantBox) 中的 [XAPI2](https://github.com/QuantBox/XAPI2)、[QuantBox.Data](https://github.com/QuantBox/QuantBox.Data) 等项目
 
 ## 目的
