@@ -1,0 +1,149 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{6BCE460B-A10A-4874-9AF2-7D70FF194995}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>QuantBox.Demo</RootNamespace>
+    <AssemblyName>QuantBox.Demo</AssemblyName>
+    <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>C:\Program Files\SmartQuant Ltd\OpenQuant 2014\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>QuantBox.Demo.Program</StartupObject>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Newtonsoft.Json, Version=9.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.9.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="protobuf-net, Version=2.1.0.0, Culture=neutral, PublicKeyToken=257b51d87d2e4d67, processorArchitecture=MSIL">
+      <HintPath>..\packages\protobuf-net.2.1.0\lib\net451\protobuf-net.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="QuantBox.APIProvider, Version=0.5.0.1, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files\SmartQuant Ltd\OpenQuant 2014\QuantBox.APIProvider.dll</HintPath>
+    </Reference>
+    <Reference Include="QuantBox.Data.Serializer, Version=2014.12.23.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>lib\QuantBox.Data.Serializer.dll</HintPath>
+    </Reference>
+    <Reference Include="QuantBox.Extensions">
+      <HintPath>C:\Program Files\SmartQuant Ltd\OpenQuant 2014\QuantBox.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="SmartQuant, Version=1.2.0.0, Culture=neutral, PublicKeyToken=023ca4f8a69375d5, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files\SmartQuant Ltd\OpenQuant 2014\SmartQuant.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="XAPI_CSharp, Version=1.4.0.0, Culture=neutral, PublicKeyToken=895da28f5c4589cf, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files\SmartQuant Ltd\OpenQuant 2014\XAPI_CSharp.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Data\CsvDataImport.cs" />
+    <Compile Include="Data\PbTickDataExport.cs" />
+    <Compile Include="Data\PbTickDataImport.cs" />
+    <Compile Include="Data\TdxDataImport.cs" />
+    <Compile Include="Helper\InstrumentStrategyHelper.cs" />
+    <Compile Include="Helper\StatisticsHelper.cs" />
+    <Compile Include="Indicator\BIAS.cs" />
+    <Compile Include="Indicator\DPO1.cs" />
+    <Compile Include="Indicator\KaufmanAMA.ER.cs" />
+    <Compile Include="Indicator\KaufmanAMA.cs" />
+    <Compile Include="Indicator\KDJ.D.cs" />
+    <Compile Include="Indicator\KDJ.K.cs" />
+    <Compile Include="Indicator\KDJ.cs" />
+    <Compile Include="Indicator\PriceChannel.cs" />
+    <Compile Include="Indicator\Test\BIAS_Strategy.cs" />
+    <Compile Include="Indicator\Test\PriceChannel_Strategy.cs" />
+    <Compile Include="Indicator\Test\DPO1_Strategy.cs" />
+    <Compile Include="Indicator\Test\KaufmanAMA_Strategy.cs" />
+    <Compile Include="Indicator\Test\KDJ_Strategy.cs" />
+    <Compile Include="Indicator\Test\LookBackDays_Strategy.cs" />
+    <Compile Include="Indicator\LookBackDays.cs" />
+    <Compile Include="Helper\ParameterHelper.cs" />
+    <Compile Include="Helper\PriceHelper.cs" />
+    <Compile Include="Helper\StrategyHelper.cs" />
+    <Compile Include="Helper\TimeHelper.cs" />
+    <Compile Include="Position\DualPositionContainer.cs" />
+    <Compile Include="Position\OpenCloseHelper.cs" />
+    <Compile Include="Position\PositionHelper.cs" />
+    <Compile Include="Position\MonoPositionRecord.cs" />
+    <Compile Include="Position\DualPositionRecord.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Scenario\Realtime86400.cs" />
+    <Compile Include="Scenario\Backtest86400.cs" />
+    <Compile Include="Scenario\Backtest.cs" />
+    <Compile Include="Scenario\BacktestLoadOnStart.cs" />
+    <Compile Include="Scenario\IndicatorTest.cs" />
+    <Compile Include="Extension\StopEx.cs" />
+    <Compile Include="Scenario\RealtimeLoadOnStart.cs" />
+    <Compile Include="Statistics\HighLowPrice.cs" />
+    <Compile Include="Statistics\DailyStatisticsItem.cs" />
+    <Compile Include="Statistics\DailyConsecutiveWinTrades.cs" />
+    <Compile Include="Statistics\DailyConsecutiveLossTrades.cs" />
+    <Compile Include="Statistics\DailyNumOfWinTrades.cs" />
+    <Compile Include="Statistics\DailyNumOfLossTrades.cs" />
+    <Compile Include="Statistics\PortfolioStatisticsType.cs" />
+    <Compile Include="Statistics\TrailingPrice.cs" />
+    <Compile Include="Strategy\DoubleMA_Crossover.cs" />
+    <Compile Include="Strategy\DualThrust_RangeBreak_Strategy.cs" />
+    <Compile Include="Strategy\DynamicBreakOut2.cs" />
+    <Compile Include="Strategy\SMACrossoverLoadOnStart_Strategy.cs" />
+    <Compile Include="Strategy\OpenCloseStrategy.cs" />
+    <Compile Include="Strategy\RBreaker_Strategy.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="lib\QuantBox.Data.Serializer.dll" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
